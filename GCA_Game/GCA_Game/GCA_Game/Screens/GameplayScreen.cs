@@ -73,7 +73,7 @@ namespace GCA_Game
         private float rightMiddleBounds = 1045;
 
         private SpriteType lastHolder = SpriteType.Ball;
-        private SceneSprite holder;
+        public static SceneSprite holder;
         private Vector2 throwBall = new Vector2(80, 0);
         private Vector2 toHandX = new Vector2(15, 0);
         private Vector2 toHandY = new Vector2(0, 25);
@@ -347,7 +347,6 @@ namespace GCA_Game
                 //unitVector.X = unitVector.X * 0.975f;
 
                 gametime--;
-                System.Diagnostics.Debug.WriteLine("Cursor: " + cursor.Position);
             }
 
         }
