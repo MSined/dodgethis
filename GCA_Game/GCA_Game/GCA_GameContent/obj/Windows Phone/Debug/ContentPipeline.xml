@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\ninja.xnb</Output>
+      <Output>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\ninja.xnb</Output>
       <Time>2011-10-01T12:01:06-04:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\pirate.xnb</Output>
+      <Output>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\pirate.xnb</Output>
       <Time>2011-10-01T12:01:58-04:00</Time>
     </Item>
     <Item>
@@ -25,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\switchon.xnb</Output>
+      <Output>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\switchon.xnb</Output>
       <Time>2011-10-01T19:04:42-04:00</Time>
     </Item>
     <Item>
@@ -34,7 +34,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\switchoff.xnb</Output>
+      <Output>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\switchoff.xnb</Output>
       <Time>2011-10-01T19:04:06-04:00</Time>
     </Item>
     <Item>
@@ -43,7 +43,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Textures\bg.xnb</Output>
+      <Output>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Textures\bg.xnb</Output>
       <Time>2011-10-01T03:58:12-04:00</Time>
     </Item>
     <Item>
@@ -52,7 +52,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\cloud.xnb</Output>
+      <Output>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\cloud.xnb</Output>
       <Time>2011-10-01T13:26:28-04:00</Time>
     </Item>
     <Item>
@@ -61,7 +61,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\cloud2.xnb</Output>
+      <Output>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\cloud2.xnb</Output>
       <Time>2011-10-01T13:53:50-04:00</Time>
     </Item>
     <Item>
@@ -70,7 +70,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\ball.xnb</Output>
+      <Output>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\ball.xnb</Output>
       <Time>2011-10-01T12:51:28-04:00</Time>
     </Item>
     <Item>
@@ -79,7 +79,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Textures\back.xnb</Output>
+      <Output>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Textures\back.xnb</Output>
       <Time>2011-10-01T22:01:42-04:00</Time>
     </Item>
     <Item>
@@ -88,7 +88,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Textures\title.xnb</Output>
+      <Output>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Textures\title.xnb</Output>
       <Time>2011-10-01T17:07:30-04:00</Time>
     </Item>
     <Item>
@@ -97,7 +97,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\startButton.xnb</Output>
+      <Output>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\startButton.xnb</Output>
       <Time>2011-10-01T19:46:48-04:00</Time>
     </Item>
     <Item>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\nArrow.xnb</Output>
-      <Time>2011-10-01T14:06:30-04:00</Time>
+      <Output>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\nArrow.xnb</Output>
+      <Time>2012-01-03T11:19:04.1279384-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\pArrow.png</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\pArrow.xnb</Output>
-      <Time>2011-10-02T11:48:16-04:00</Time>
+      <Output>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\pArrow.xnb</Output>
+      <Time>2012-01-03T11:18:37.6642923-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\playerArrow.png</Source>
@@ -124,7 +124,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\playerArrow.xnb</Output>
+      <Output>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sprites\playerArrow.xnb</Output>
       <Time>2011-10-02T13:24:48-04:00</Time>
     </Item>
     <Item>
@@ -133,7 +133,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Fonts\menuFont.xnb</Output>
+      <Output>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Fonts\menuFont.xnb</Output>
       <Time>2011-09-30T19:03:28-04:00</Time>
     </Item>
     <Item>
@@ -142,7 +142,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Fonts\gameFont.xnb</Output>
+      <Output>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Fonts\gameFont.xnb</Output>
       <Time>2011-10-02T11:01:06-04:00</Time>
     </Item>
     <Item>
@@ -151,7 +151,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sounds\catch.xnb</Output>
+      <Output>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sounds\catch.xnb</Output>
       <Time>2011-10-02T13:20:16-04:00</Time>
     </Item>
     <Item>
@@ -160,7 +160,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sounds\HeroicAge.xnb</Output>
+      <Output>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sounds\HeroicAge.xnb</Output>
       <Time>2011-10-02T13:49:24-04:00</Time>
     </Item>
     <Item>
@@ -169,7 +169,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sounds\hit.xnb</Output>
+      <Output>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sounds\hit.xnb</Output>
       <Time>2011-10-02T13:20:32-04:00</Time>
     </Item>
     <Item>
@@ -178,7 +178,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sounds\woosh.xnb</Output>
+      <Output>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\Sounds\woosh.xnb</Output>
       <Time>2011-10-01T14:22:34-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -187,10 +187,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_GameContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_GameContent\obj\Windows Phone\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\d_manit\Desktop\JoelGame\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_GameContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_GameContent\obj\Windows Phone\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\d_manit\Desktop\dodgethis\GCA_Game\GCA_Game\GCA_Game\bin\Windows Phone\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

@@ -324,7 +324,7 @@ namespace GCA_Game
                 {
                     if (camera.PositionX + 800 < ninjaList[i].Position.X)
                     {
-                        arrowList[i].Position = new Vector2(camera.PositionX + 750, pirateList[i].Position.Y);
+                        arrowList[i].Position = new Vector2(camera.PositionX + 750, ninjaList[i].Position.Y + 35);
                     }
                     else
                         arrowList[i].Position = new Vector2(100000f, 0);
