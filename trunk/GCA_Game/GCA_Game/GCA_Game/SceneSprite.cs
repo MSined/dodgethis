@@ -242,16 +242,18 @@ namespace GCA_Game
                 // Check left bound
                 if ((worldPosition.X += worldDirection.X * movementSpeed) < leftBounds)
                 {
-                    worldDirection = new Vector2(0, 0);
+                    if(this.type == SpriteType.Ninja || this.type == SpriteType.Pirate)
+                        worldDirection = new Vector2(0, 0);
                     worldPosition.X = leftBounds;
                     atLeft = true;
                     destinationReached = true;
                     hitSoundPlay = true;
                 }
                 // Check right bound
-                if ((worldPosition.X += worldDirection.X * movementSpeed) > rightBounds)
+                else if ((worldPosition.X += worldDirection.X * movementSpeed) > rightBounds)
                 {
-                    worldDirection = new Vector2(0, 0);
+                    if(this.type == SpriteType.Ninja || this.type == SpriteType.Pirate)
+                        worldDirection = new Vector2(0, 0);
                     worldPosition.X = rightBounds;
                     atRight = true;
                     destinationReached = true;
@@ -260,21 +262,38 @@ namespace GCA_Game
                 // Check top bound
                 if ((worldPosition.Y += worldDirection.Y * movementSpeed) < topBounds)
                 {
-                    worldDirection = new Vector2(0, 0);
+                    if(this.type == SpriteType.Ninja || this.type == SpriteType.Pirate)
+                        worldDirection = new Vector2(0, 0);
                     worldPosition.Y = topBounds;
                     atTop = true;
                     destinationReached = true;
                     hitSoundPlay = true;
                 }
                 // Check bottom bound
-                if ((worldPosition.Y += worldDirection.Y * movementSpeed) > bottomBounds)
+                else if ((worldPosition.Y += worldDirection.Y * movementSpeed) > bottomBounds)
                 {
-                    worldDirection = new Vector2(0, 0);
+                    if(this.type == SpriteType.Ninja || this.type == SpriteType.Pirate)
+                        worldDirection = new Vector2(0, 0);
                     worldPosition.Y = bottomBounds;
                     atBottom = true;
                     destinationReached = true;
                     hitSoundPlay = true;
                 }
+
+                // Ball-Wall Collision response
+                if (this.type == SpriteType.Ball)
+                {
+                    if (GameplayScreen.holder.type != SpriteType.Ball)
+                        hitSoundPlay = false;
+
+                    if (atBottom || atTop)
+                        ball_unitVector.Y *= -1;
+                    else if (atLeft || atRight)
+                        ball_unitVector.X *= -1;
+
+                    atBottom = atTop = atLeft = atRight = false;
+                }
+
                 //The sprite has not reached its destination
                 worldPosition += worldDirection * movementSpeed;
             }
@@ -304,6 +323,7 @@ namespace GCA_Game
                 this.Position.Y + this.texture.Height > that.Position.X) { return true; }
             else { return false; }
         }
+        /*
         public void followHolder(SceneSprite holder)
         {
             if (holder.type != SpriteType.Ball)
@@ -311,7 +331,7 @@ namespace GCA_Game
                 this.Position = holder.Position;
             }
         }
-
+        */
         public void Spin()
         {
             if (this.spin_amount > 0)
