@@ -1,0 +1,5 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="GCA_Game" EntryPointType="GCA_Game.GameStateManagementGame" RuntimeVersion="3.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="GCA_Game" Source="GCA_Game.dll" />
+  </Deployment.Parts>
+</Deployment>
