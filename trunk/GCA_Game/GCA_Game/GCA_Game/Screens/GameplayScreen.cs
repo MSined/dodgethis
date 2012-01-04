@@ -98,6 +98,10 @@ namespace GCA_Game
 
         SoundEffect woosh;
 
+        private int finalGameTime = 0;
+        private bool gameOver = false, playerWins = false;
+        private SpriteFont endGameFont;
+
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -123,6 +127,7 @@ namespace GCA_Game
 
             backgroundTexture = content.Load<Texture2D>(@"textures/back");
             gameFont = content.Load<SpriteFont>(@"Fonts/gameFont");
+            endGameFont = content.Load<SpriteFont>(@"Fonts/endGameFont");
 
             woosh = content.Load<SoundEffect>(@"Sounds/woosh");
 
@@ -225,130 +230,144 @@ namespace GCA_Game
 
             if (IsActive)
             {
-                foreach (SceneSprite ns in ninjaList)
+                if (!gameOver)
                 {
-                    ns.MoveSprite(rightMiddleBounds, rightBounds, topBounds, bottomBounds);
-                    ns.SpriteAI(rightMiddleBounds, rightBounds, topBounds, bottomBounds);
-                }
-
-                foreach (SceneSprite ps in pirateList)
-                {
-                    ps.MoveSprite(leftBounds, leftMiddleBounds, topBounds, bottomBounds);
-                    ps.SpriteAI(leftBounds, leftMiddleBounds, topBounds, bottomBounds);
-                }
-
-                if (ball.getHitSoundPlay())
-                {
-                    hitSoundEffect.Play();
-                    ball.setHitSoundPlay(false);
-                }
-
-                ball.MoveSprite(leftBounds, rightBounds, topBounds, bottomBounds + (currentSelection.Texture.Bounds.Height / 2) - (ball.Texture.Bounds.Height / 2));
-
-                camera.Position = currentSelection.Position - new Vector2(windowWidth / 2, windowHeight / 2);
-
-                switchButton.Position = currentSelection.Position + new Vector2(300, 200); //Hard coded button placements =[
-                HUD_spinsLeftPos = currentSelection.Position + new Vector2(-320, 210);
-                HUD_timeTextPos = currentSelection.Position + new Vector2(-0, -205);
-                HUD_enemyCountPos = currentSelection.Position + new Vector2(-300, -205);
-                HUD_timeLeftPos = currentSelection.Position + new Vector2(-0, -175);
-
-                for (int i = 0; i < cloudCount; i++)
-                {
-                    if (direction[i])
+                    foreach (SceneSprite ns in ninjaList)
                     {
-                        cloudList[i].Position += new Vector2(.5f, 0);
-                    }
-                    else
-                    {
-                        cloudList[i].Position -= new Vector2(.5f, 0);
+                        ns.MoveSprite(rightMiddleBounds, rightBounds, topBounds, bottomBounds);
+                        ns.SpriteAI(rightMiddleBounds, rightBounds, topBounds, bottomBounds);
                     }
 
-                    if (cloudList[i].Position.X < -200)
+                    foreach (SceneSprite ps in pirateList)
                     {
-                        cloudList[i].Position = new Vector2(1730, (random.Next(960) / 6) + 75);
+                        ps.MoveSprite(leftBounds, leftMiddleBounds, topBounds, bottomBounds);
+                        ps.SpriteAI(leftBounds, leftMiddleBounds, topBounds, bottomBounds);
                     }
-                    else if (cloudList[i].Position.X > 1730)
+
+                    if (ball.getHitSoundPlay())
                     {
-                        cloudList[i].Position = new Vector2(-200, (random.Next(960) / 6) + 75);
+                        hitSoundEffect.Play();
+                        ball.setHitSoundPlay(false);
                     }
-                }
 
-                cursor.Position = camera.Position + new Vector2(400, 150);
-                cursor.Position += new Vector2(0f, (float)(Math.Sin(10 * gameTime.TotalGameTime.TotalSeconds) * 5));
+                    ball.MoveSprite(leftBounds, rightBounds, topBounds, bottomBounds + (currentSelection.Texture.Bounds.Height / 2) - (ball.Texture.Bounds.Height / 2));
 
-                foreach (SceneSprite ss in pirateList)
-                {
-                    if (ball.collideWith(ss) && holder.Type != SpriteType.Pirate)
+                    camera.Position = currentSelection.Position - new Vector2(windowWidth / 2, windowHeight / 2);
+
+                    switchButton.Position = currentSelection.Position + new Vector2(300, 200); //Hard coded button placements =[
+                    HUD_spinsLeftPos = currentSelection.Position + new Vector2(-320, 210);
+                    HUD_timeTextPos = currentSelection.Position + new Vector2(-0, -205);
+                    HUD_enemyCountPos = currentSelection.Position + new Vector2(-300, -205);
+                    HUD_timeLeftPos = currentSelection.Position + new Vector2(-0, -175);
+
+                    for (int i = 0; i < cloudCount; i++)
                     {
-                        //code for if collide
-                        if (ball.Ball_UnitVector.Length() > 10 && lastHolder == SpriteType.Ninja)
-                        { //hard hit
-
+                        if (direction[i])
+                        {
+                            cloudList[i].Position += new Vector2(.5f, 0);
                         }
                         else
-                        { //soft hit or pass
-                            holder = ss;
-                            lastHolder = ss.Type;
+                        {
+                            cloudList[i].Position -= new Vector2(.5f, 0);
+                        }
+
+                        if (cloudList[i].Position.X < -200)
+                        {
+                            cloudList[i].Position = new Vector2(1730, (random.Next(960) / 6) + 75);
+                        }
+                        else if (cloudList[i].Position.X > 1730)
+                        {
+                            cloudList[i].Position = new Vector2(-200, (random.Next(960) / 6) + 75);
                         }
                     }
-                }
-                foreach (SceneSprite ss in ninjaList)
-                {
-                    if (ball.collideWith(ss) && holder.Type != SpriteType.Ninja)
-                    {
-                        if (ball.Ball_UnitVector.Length() > 10 && lastHolder == SpriteType.Pirate)
-                        { //hard hit
 
+                    cursor.Position = camera.Position + new Vector2(400, 150);
+                    cursor.Position += new Vector2(0f, (float)(Math.Sin(10 * gameTime.TotalGameTime.TotalSeconds) * 5));
+
+                    foreach (SceneSprite ss in pirateList)
+                    {
+                        if (ball.collideWith(ss) && holder.Type != SpriteType.Pirate)
+                        {
+                            //code for if collide
+                            if (ball.Ball_UnitVector.Length() > 10 && lastHolder == SpriteType.Ninja)
+                            { //hard hit
+
+                            }
+                            else
+                            { //soft hit or pass
+                                holder = ss;
+                                lastHolder = ss.Type;
+                            }
+                        }
+                    }
+                    foreach (SceneSprite ss in ninjaList)
+                    {
+                        if (ball.collideWith(ss) && holder.Type != SpriteType.Ninja)
+                        {
+                            if (ball.Ball_UnitVector.Length() > 10 && lastHolder == SpriteType.Pirate)
+                            { //hard hit
+
+                            }
+                            else
+                            { //soft hit or pass
+                                holder = ss;
+                                lastHolder = ss.Type;
+                            }
+                        }
+                    }
+                    if (holder.Type != SpriteType.Ball)
+                    {
+                        if (holder.Direction.X < 0)
+                        {
+                            ball.Position = holder.Position + toHandX + toHandY;
                         }
                         else
-                        { //soft hit or pass
-                            holder = ss;
-                            lastHolder = ss.Type;
+                        {
+                            ball.Position = holder.Position - toHandX + toHandY;
                         }
                     }
+
+                    for (int i = 0; i < enemyCount; i++)
+                    {
+                        if (camera.PositionX + 800 < ninjaList[i].Position.X)
+                        {
+                            arrowList[i].Position = new Vector2(camera.PositionX + 750, ninjaList[i].Position.Y + 35);
+                        }
+                        else
+                            arrowList[i].Position = new Vector2(100000f, 0);
+                    }
+
+                    //velocity += new Vector2(0f, (float)(0.098 * 5));
+                    //// ball moving
+                    //if (ball.Position.Y > 400)
+                    //{
+                    //    velocity.Y = -velocity.Y * 0.8f;
+                    //}
+
+                    //if (velocity.Y < 0 && velocity.Y > -2)
+                    //{
+                    //    velocity.Y = 0;
+                    //}
+                    //ball.Position += velocity;
+                    //ball.Position += unitVector;
+                    //unitVector.Y = unitVector.Y * 0.9f;
+                    //unitVector.X = unitVector.X * 0.975f;
+
+                    gametime--;
+
+                    finalGameTime = (int)(gametime / (FPS * 60));
+
+                    if (finalGameTime <= 0 || enemyCount <= 0 || pirateList.Count <= 0)
+                        gameOver = true;
                 }
-                if (holder.Type != SpriteType.Ball)
+                else
                 {
-                    if (holder.Direction.X < 0)
-                    {
-                        ball.Position = holder.Position + toHandX + toHandY;
-                    }
+                    if (enemyCount > 0 || pirateList.Count <= 0)
+                        playerWins = false;
                     else
-                    {
-                        ball.Position = holder.Position - toHandX + toHandY;
-                    }
+                        playerWins = true;
                 }
-
-                for (int i = 0; i < enemyCount; i++)
-                {
-                    if (camera.PositionX + 800 < ninjaList[i].Position.X)
-                    {
-                        arrowList[i].Position = new Vector2(camera.PositionX + 750, ninjaList[i].Position.Y + 35);
-                    }
-                    else
-                        arrowList[i].Position = new Vector2(100000f, 0);
-                }
-
-                //velocity += new Vector2(0f, (float)(0.098 * 5));
-                //// ball moving
-                //if (ball.Position.Y > 400)
-                //{
-                //    velocity.Y = -velocity.Y * 0.8f;
-                //}
-
-                //if (velocity.Y < 0 && velocity.Y > -2)
-                //{
-                //    velocity.Y = 0;
-                //}
-                //ball.Position += velocity;
-                //ball.Position += unitVector;
-                //unitVector.Y = unitVector.Y * 0.9f;
-                //unitVector.X = unitVector.X * 0.975f;
-
-                gametime--;
             }
-
         }
 
         /// <summary>
@@ -364,78 +383,94 @@ namespace GCA_Game
                 switch (gs.GestureType)
                 {
                     case GestureType.Tap:
-                        #region Screen Tapped
-                        //Touch screen has been tapped
-
-                        //Using xPos and yPos to get a directional vector, since gs.Position is relative to the screen itself
-                        float xPos = gs.Position.X;
-                        float yPos = gs.Position.Y;
-
-                        xPos = xPos - (windowWidth / 2);
-                        yPos = yPos - (windowHeight / 2);
-
-                        //Check if 'Switch' button was pressed
-                        if (switchButton.Bounds.Intersects(new Rectangle((int)(currentSelection.Position.X + xPos + (switchButton.Bounds.Width / 2)),
-                                                                         (int)(currentSelection.Position.Y + yPos + (switchButton.Bounds.Height / 2)),
-                                                                         1,
-                                                                         1)))
+                        // If game is not over, proceed normally
+                        if (!gameOver)
                         {
-                            //Toggle the state button
-                            if (state == GameState.Control)
+                            #region Screen Tapped
+
+                            /*
+                             * USED ONLY FOR END GAME DEBUGGING
+                             */
+                            gameOver = true;
+
+                            //Touch screen has been tapped
+
+                            //Using xPos and yPos to get a directional vector, since gs.Position is relative to the screen itself
+                            float xPos = gs.Position.X;
+                            float yPos = gs.Position.Y;
+
+                            xPos = xPos - (windowWidth / 2);
+                            yPos = yPos - (windowHeight / 2);
+
+                            //Check if 'Switch' button was pressed
+                            if (switchButton.Bounds.Intersects(new Rectangle((int)(currentSelection.Position.X + xPos + (switchButton.Bounds.Width / 2)),
+                                                                             (int)(currentSelection.Position.Y + yPos + (switchButton.Bounds.Height / 2)),
+                                                                             1,
+                                                                             1)))
                             {
-                                state = GameState.Switch;
-                                switchButton.Texture = buttonOn;
+                                //Toggle the state button
+                                if (state == GameState.Control)
+                                {
+                                    state = GameState.Switch;
+                                    switchButton.Texture = buttonOn;
+                                }
+                                else
+                                {
+                                    state = GameState.Control;
+                                    switchButton.Texture = buttonOff;
+                                }
                             }
-                            else
+                            else if (state == GameState.Switch)
                             {
+                                //Game state in Switch mode
+                                //Another sprite is being selected
+                                if (currentSelection.Type == SpriteType.Pirate)
+                                {
+                                    //Loop through sprites list
+                                    for (int i = 0; i < MAX_SPRITES; i++)
+                                    {
+                                        if (pirateList[i].Bounds.Intersects(new Rectangle((int)(currentSelection.Position.X + xPos + (pirateList[i].Bounds.Width / 2)),
+                                                                                         (int)(currentSelection.Position.Y + yPos + (pirateList[i].Bounds.Height / 2)),
+                                                                                         1,
+                                                                                         1)))
+                                        {
+                                            //Set the new current selection
+                                            currentSelection.AIstate = true;
+                                            currentSelection = pirateList[i];
+                                            currentSelection.AIstate = false;
+                                            break;
+                                        }
+                                    }
+                                }
+                                else if (currentSelection.Type == SpriteType.Ninja)
+                                {
+                                    //Loop through sprites list
+                                    for (int i = 0; i < MAX_SPRITES; i++)
+                                    {
+                                        if (ninjaList[i].Bounds.Intersects(new Rectangle((int)(currentSelection.Position.X + xPos + (ninjaList[i].Bounds.Width / 2)),
+                                                                                         (int)(currentSelection.Position.Y + yPos + (ninjaList[i].Bounds.Height / 2)),
+                                                                                         1,
+                                                                                         1)))
+                                        {
+                                            //Set the new current selection
+                                            currentSelection.AIstate = true;
+                                            currentSelection = ninjaList[i];
+                                            currentSelection.AIstate = false;
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                //Switch the state back
                                 state = GameState.Control;
                                 switchButton.Texture = buttonOff;
                             }
                         }
-                        else if (state == GameState.Switch)
+                        // If game is over, tap to restart
+                        else
                         {
-                            //Game state in Switch mode
-                            //Another sprite is being selected
-                            if (currentSelection.Type == SpriteType.Pirate)
-                            {
-                                //Loop through sprites list
-                                for (int i = 0; i < MAX_SPRITES; i++)
-                                {
-                                    if (pirateList[i].Bounds.Intersects(new Rectangle((int)(currentSelection.Position.X + xPos + (pirateList[i].Bounds.Width / 2)),
-                                                                                     (int)(currentSelection.Position.Y + yPos + (pirateList[i].Bounds.Height / 2)),
-                                                                                     1,
-                                                                                     1)))
-                                    {
-                                        //Set the new current selection
-                                        currentSelection.AIstate = true;
-                                        currentSelection = pirateList[i];
-                                        currentSelection.AIstate = false;
-                                        break;
-                                    }
-                                }
-                            }
-                            else if (currentSelection.Type == SpriteType.Ninja)
-                            {
-                                //Loop through sprites list
-                                for (int i = 0; i < MAX_SPRITES; i++)
-                                {
-                                    if (ninjaList[i].Bounds.Intersects(new Rectangle((int)(currentSelection.Position.X + xPos + (ninjaList[i].Bounds.Width / 2)),
-                                                                                     (int)(currentSelection.Position.Y + yPos + (ninjaList[i].Bounds.Height / 2)),
-                                                                                     1,
-                                                                                     1)))
-                                    {
-                                        //Set the new current selection
-                                        currentSelection.AIstate = true;
-                                        currentSelection = ninjaList[i];
-                                        currentSelection.AIstate = false;
-                                        break;
-                                    }
-                                }
-                            }
-
-                            //Switch the state back
-                            state = GameState.Control;
-                            switchButton.Texture = buttonOff;
+                            // Call function to reset the game
+                            restartGame();
                         }
                         break;
                     default:
@@ -559,7 +594,7 @@ namespace GCA_Game
             spriteBatch.DrawString(gameFont, output, HUD_timeTextPos, Color.Gold,
                 0, fontOrigin, 1.0f, SpriteEffects.None, 0.5f);
 
-            output = (int)(gametime / (FPS * 60)) + ":";
+            output = finalGameTime + ":";
 
             if ((int)((gametime / FPS) % 60) < 10)
                 output += "0";
@@ -571,11 +606,43 @@ namespace GCA_Game
             spriteBatch.DrawString(gameFont, output, HUD_timeLeftPos, Color.Gold,
                 0, fontOrigin, 1.0f, SpriteEffects.None, 0.5f);
 
+            if (gameOver)
+            {
+                spriteBatch.DrawString(endGameFont, "ROUND FINISHED...", new Vector2(HUD_timeTextPos.X - 235, HUD_timeTextPos.Y + 100), Color.White);
+                spriteBatch.DrawString(endGameFont, "ROUND FINISHED...", new Vector2(HUD_timeTextPos.X - 233, HUD_timeTextPos.Y + 102), Color.Green);
+
+                if (playerWins)
+                {
+                    spriteBatch.DrawString(endGameFont, "PLAYER WINS!", new Vector2(HUD_timeTextPos.X - 215, HUD_timeTextPos.Y + 160), Color.Black);
+                    spriteBatch.DrawString(endGameFont, "PLAYER WINS!", new Vector2(HUD_timeTextPos.X - 213, HUD_timeTextPos.Y + 162), Color.Gold);
+                }
+                else
+                {
+                    spriteBatch.DrawString(endGameFont, "PLAYER LOSES...", new Vector2(HUD_timeTextPos.X - 205, HUD_timeTextPos.Y + 160), Color.Black);
+                    spriteBatch.DrawString(endGameFont, "PLAYER LOSES...", new Vector2(HUD_timeTextPos.X - 203, HUD_timeTextPos.Y + 162), Color.Red);
+                }
+
+                spriteBatch.DrawString(endGameFont, "Tap to quit.", new Vector2(HUD_timeTextPos.X - 155, HUD_timeTextPos.Y + 210), Color.White);
+                spriteBatch.DrawString(endGameFont, "Tap to quit.", new Vector2(HUD_timeTextPos.X - 153, HUD_timeTextPos.Y + 212), Color.Green);
+            }
+
             spriteBatch.End();
 
             // If the game is transitioning on or off, fade it out to black.
             if (TransitionPosition > 0)
                 ScreenManager.FadeBackBufferToBlack(1f - TransitionAlpha);
+        }
+
+        private void restartGame()
+        {
+            gametime = 0;
+            finalGameTime = 0;
+            playerWins = false;
+
+            ScreenManager.AddScreen(new BackgroundScreen(), null);
+            ScreenManager.AddScreen(new MainMenuScreen(), null);
+
+            this.ExitScreen();
         }
     }
 }
