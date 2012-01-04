@@ -388,11 +388,6 @@ namespace GCA_Game
                         {
                             #region Screen Tapped
 
-                            /*
-                             * USED ONLY FOR END GAME DEBUGGING
-                             */
-                            gameOver = true;
-
                             //Touch screen has been tapped
 
                             //Using xPos and yPos to get a directional vector, since gs.Position is relative to the screen itself
